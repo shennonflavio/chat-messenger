@@ -76,7 +76,7 @@ function HomePage() {
 
   useEffect(()=>{
     async function getEmoji() {
-       await fetch("../../emojiList.json", {
+       await fetch("../../../public/emojiList.json", {
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
