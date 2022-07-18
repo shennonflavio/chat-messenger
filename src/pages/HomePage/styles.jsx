@@ -41,17 +41,6 @@ export const ContactContent = styled.div`
 
   .wrapperContactCard {
     overflow-x: auto;
-
-    ::-webkit-scrollbar {
-      width: 8px;
-      border-radius: 10px;
-      background: #f9fafc;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #dbe5ed;
-      width: 5px;
-      border-radius: 10px;
-    }
   }
 `;
 
@@ -191,11 +180,12 @@ export const PainelMessages = styled.div`
   width: 950px;
   height: 100%;
   border-radius: 10px;
-  /* padding: 12px; */
+  padding: 12px;
   border: ${({ theme }) => `1px solid ${theme.border}`};
   background: ${({ theme }) => theme.backgroundPainel};
   position: relative;
   opacity: 1;
+  padding: 0 20px;
 `;
 
 export const TitleChat = styled.div`
@@ -222,6 +212,8 @@ export const PainelChat = styled.div`
   height: calc(100% - 170px);
   position: absolute;
   top: 80px;
+  /* background: red; */
+
 `;
 
 export const WrapperInputMessage = styled.div`
@@ -232,6 +224,38 @@ export const WrapperInputMessage = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+
+`;
+
+export const EmojiList = styled.div`
+  width: 100%;
+  height: ${({ height }) => height};
+  position: absolute;
+  bottom: 65px;
+  border-radius: 10px;
+  background-color: ${({theme})=> theme.body};
+  transition: 0.5s;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .emoji{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({theme})=> theme.backgroundCard};
+  }
 `;
 
 export const InputMessage = styled.div`
@@ -258,6 +282,9 @@ export const InputMessage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .emoji {
+    cursor: pointer;
   }
 `;
 

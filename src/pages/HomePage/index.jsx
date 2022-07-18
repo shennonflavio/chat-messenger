@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   addMember,
@@ -61,10 +61,27 @@ import {
   File,
   WrapperFiles,
   SizeAndAction,
+  EmojiList,
 } from './styles';
+
 
 function HomePage() {
   const [openChatDetails, setOpenChatDetails] = useState(false);
+  const [openEmojiList, setOpenEmojiList] = useState(false);
+  const [emojiList, setEmojiList] = useState({});
+
+  function handlerEmojiList() {
+    setOpenEmojiList(!openEmojiList)
+  }
+
+  useEffect(()=>{
+    async function getEmoji() {
+       await fetch("../../emojiList.json").then((res)=> res.json()).then((data)=> setEmojiList(data))
+
+  }
+  return getEmoji;
+
+},[openEmojiList])
 
   return (
     <Container>
@@ -126,13 +143,25 @@ function HomePage() {
           </TitleChat>
           <PainelChat>1</PainelChat>
           <WrapperInputMessage>
+
+                <EmojiList
+
+                height={openEmojiList ? '250px' : '0px'}>
+                  {Object.entries(emojiList).map(([key, value]) =>
+                  <div className='emoji' key={key}>{value.symbol}</div>
+                   )}
+                </EmojiList>
             <InputMessage>
               <div>
                 <span>Enter your message here</span>
               </div>
               <div className="inputMessageOptions">
+                <div onClick={()=>handlerEmojiList()} className='emoji' aria-hidden="true">
                 <img src={smile} alt="" />
+                </div>
+                <div>
                 <img src={paperclip} alt="" />
+                </div>
                 <img src={sendButton} alt="" />
               </div>
             </InputMessage>

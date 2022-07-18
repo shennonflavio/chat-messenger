@@ -15,4 +15,15 @@ export default createGlobalStyle`
      transition: 1s;
   }
 
+  ::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 10px;
+      background: #f9fafc;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #dbe5ed;
+      width: 5px;
+      border-radius: 10px;
+    }
+
 `;
