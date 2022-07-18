@@ -76,7 +76,13 @@ function HomePage() {
 
   useEffect(()=>{
     async function getEmoji() {
-       await fetch("../../emojiList.json").then((res)=>{
+       await fetch("../../emojiList.json", {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    }).then((res)=>{
        if(res.status !== 200){
         console.log(res.status)
        }
