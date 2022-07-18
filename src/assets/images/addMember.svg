@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="button.add.member" transform="translate(-353 -390)">
+    <rect id="Retângulo_7" data-name="Retângulo 7" width="24" height="24" rx="5" transform="translate(353 390)" fill="#dbe5ed" opacity="0.205"/>
+    <g id="user-plus_1_" data-name="user-plus (1)" transform="translate(358 394.091)">
+      <path id="Caminho_86" data-name="Caminho 86" d="M9.182,18.273V17.182A2.182,2.182,0,0,0,7,15H3.182A2.182,2.182,0,0,0,1,17.182v1.091" transform="translate(0 -5.455)" fill="none" stroke="#7b8793" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="Elipse_95" data-name="Elipse 95" cx="2.182" cy="2.182" r="2.182" transform="translate(2.909 3)" fill="none" stroke="#7b8793" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Linha_9" data-name="Linha 9" y2="3.273" transform="translate(11.364 5.727)" fill="none" stroke="#7b8793" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Linha_10" data-name="Linha 10" x1="3.273" transform="translate(9.727 7.364)" fill="none" stroke="#7b8793" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

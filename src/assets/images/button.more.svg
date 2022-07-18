@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="button.more" transform="translate(-353 -390)">
+    <rect id="Retângulo_7" data-name="Retângulo 7" width="24" height="24" rx="5" transform="translate(353 390)" fill="#dbe5ed" opacity="0.205"/>
+    <path id="Polígono_1" data-name="Polígono 1" d="M4.293.707a1,1,0,0,1,1.414,0L8.293,3.293A1,1,0,0,1,7.586,5H2.414a1,1,0,0,1-.707-1.707Z" transform="translate(370 405) rotate(180)" fill="#7b8793"/>
+  </g>
+</svg>

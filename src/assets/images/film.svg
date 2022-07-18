@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 17.5 17.5">
+  <g id="film" transform="translate(-1.25 -1.25)">
+    <rect id="Retângulo_24" data-name="Retângulo 24" width="16" height="16" rx="2.18" transform="translate(2 2)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_12" data-name="Linha 12" y2="16" transform="translate(6 2)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_13" data-name="Linha 13" y2="16" transform="translate(14 2)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_14" data-name="Linha 14" x2="16" transform="translate(2 10)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_15" data-name="Linha 15" x2="4" transform="translate(2 6)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_16" data-name="Linha 16" x2="4" transform="translate(2 14)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_17" data-name="Linha 17" x2="4" transform="translate(14 14)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Linha_18" data-name="Linha 18" x2="4" transform="translate(14 6)" fill="none" stroke="#afbbc6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
