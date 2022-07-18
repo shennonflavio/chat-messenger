@@ -23,6 +23,7 @@ import fileText from './images/file-text.svg';
 import film from './images/film.svg';
 import image from './images/image.svg';
 import arrowLeft from './images/arrow-left.svg';
+import favicon from './images/Symbol.svg';
 
 export{
   stars,
@@ -49,5 +50,6 @@ export{
   fileText,
   film,
   image,
-  arrowLeft
+  arrowLeft,
+  favicon
 }
