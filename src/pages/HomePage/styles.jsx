@@ -368,7 +368,8 @@ export const WrapperPhoneVideoButtons = styled.div`
   flex-direction: ${({ align }) => align};
   gap: 10px;
   margin: 28px 0 25px;
-  transition: 2.5s;
+  transition: 0.5s;
+  overflow: hidden;
 `;
 
 export const PhoneButton = styled.div`
@@ -381,7 +382,7 @@ export const PhoneButton = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  transition: 0.5s;
+  transition: 0.3s;
   padding-left: ${({ padding }) => padding};
 
   span {
@@ -398,7 +399,7 @@ export const VideoButton = styled.div`
   height: 40px;
   border-radius: 20px;
   gap: 11px;
-  transition: 0.5s;
+  transition: 0.3s;
   background-color: #d03e13;
   display: flex;
   align-items: center;
@@ -471,7 +472,7 @@ export const MemberCard = styled.div`
     isActive && theme ? `1px solid ${theme.border}` : ''};
   border-radius: ${({ radius }) => radius};
   opacity: 1;
-  transition: 0.5s;
+  transition: 0.3s;
 
   .divider {
     display: flex;
