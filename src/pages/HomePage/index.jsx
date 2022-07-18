@@ -76,7 +76,12 @@ function HomePage() {
 
   useEffect(()=>{
     async function getEmoji() {
-       await fetch("../../emojiList.json").then((res)=> res.json()).then((data)=> setEmojiList(data))
+       await fetch("../../emojiList.json").then((res)=>{
+       if(res.status !== 200){
+        console.log(res.status)
+       }
+       return res.json()
+       }).then((data)=> setEmojiList(data))
 
   }
   return getEmoji;
