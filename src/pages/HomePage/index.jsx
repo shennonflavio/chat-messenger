@@ -90,8 +90,10 @@ function HomePage() {
 //   return getEmoji;
 
 // },[openEmojiList])
+useEffect(()=>{
 
-axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
+  axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
+},[openEmojiList])
 
 // console.log(listEmoji)
 
