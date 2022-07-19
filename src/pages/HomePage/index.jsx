@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import axios from 'axios';
 import {
   addMember,
   arrowButton,
@@ -64,7 +65,6 @@ import {
   EmojiList,
 } from './styles';
 
-
 function HomePage() {
   const [openChatDetails, setOpenChatDetails] = useState(false);
   const [openEmojiList, setOpenEmojiList] = useState(false);
@@ -74,22 +74,26 @@ function HomePage() {
     setOpenEmojiList(!openEmojiList)
   }
 
-  useEffect(()=>{
-    async function getEmoji() {
-       await fetch("../../../public/emojiList.json", {
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
+//   useEffect(()=>{
+//     async function getEmoji() {
+//        await fetch("../../../public/emojiList.json", {
+//       headers : {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json'
+//        }
 
-    }).then((res)=>
-        res.json()
-       ).then((data)=> setEmojiList(data))
+//     }).then((res)=>
+//         res.json()
+//        ).then((data)=> setEmojiList(data))
 
-  }
-  return getEmoji;
+//   }
+//   return getEmoji;
 
-},[openEmojiList])
+// },[openEmojiList])
+
+axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
+
+// console.log(listEmoji)
 
   return (
     <Container>
