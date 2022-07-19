@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import axios from 'axios';
 import {
@@ -70,32 +70,18 @@ function HomePage() {
   const [openEmojiList, setOpenEmojiList] = useState(false);
   const [emojiList, setEmojiList] = useState({});
 
-  function handlerEmojiList() {
-    setOpenEmojiList(!openEmojiList)
-  }
+  // function handlerEmojiList() {
+  //   setOpenEmojiList(!openEmojiList)
+  // }
 
-//   useEffect(()=>{
-//     async function getEmoji() {
-//        await fetch("../../../public/emojiList.json", {
-//       headers : {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json'
-//        }
+const handlerEmojiList = useCallback(()=> setOpenEmojiList(!openEmojiList),[openEmojiList])
 
-//     }).then((res)=>
-//         res.json()
-//        ).then((data)=> setEmojiList(data))
-
-//   }
-//   return getEmoji;
-
-// },[openEmojiList])
 useEffect(()=>{
 
   axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
-},[openEmojiList])
+},[handlerEmojiList])
 
-// console.log(listEmoji)
+
 
   return (
     <Container>
@@ -170,7 +156,7 @@ useEffect(()=>{
                 <span>Enter your message here</span>
               </div>
               <div className="inputMessageOptions">
-                <div onClick={()=>handlerEmojiList()} className='emoji' aria-hidden="true">
+                <div onClick={handlerEmojiList} className='emoji' aria-hidden="true">
                 <img src={smile} alt="" />
                 </div>
                 <div>

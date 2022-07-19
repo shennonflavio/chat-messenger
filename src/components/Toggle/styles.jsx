@@ -15,12 +15,12 @@ export const Container = styled.div`
 export const WrapperToggleButton = styled.div`
  position: relative;
  width: fit-content;
- transform: ${({ rotate }) => (rotate ? 'rotate(360deg)' : '')};
+ transform: ${({ rotate }) => rotate };
  transition: 1s;
  display: flex;
  justify-content: center;
  align-items: center;
- left: ${({ move }) => (move ? '20px' : '-20px')};
+ left: ${({ move }) => move };
 `;
 
 export const ButtonTheme = styled.button`
@@ -30,7 +30,7 @@ width: 25px;
  border: none;
  background-color: ${({ theme }) => theme.backgroundToggleButton};
  cursor: pointer;
- border-radius: ${({ rotate }) => (rotate ? '70%' : '')};
+ border-radius: ${({ rotate }) => rotate };
  transition: 1s;
  box-shadow: 0px 0px 8px 2px ${({ theme }) => theme.backgroundToggleButton} ;
 

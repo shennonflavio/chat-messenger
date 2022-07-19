@@ -16,9 +16,12 @@ function Toggle() {
 
   return (
     <Container>
-      <WrapperToggleButton move={buttonEffect} rotate={buttonEffect}>
+      <WrapperToggleButton
+      move={buttonEffect ? '20px' : '-20px'}
+      rotate={buttonEffect ? 'rotate(360deg)' : '' }
+      >
         <ButtonTheme
-          rotate={buttonEffect}
+          rotate={buttonEffect ? '70%' : ''}
           onClick={() => {
             dispatch(appOptionsToggleTheme());
           }}
