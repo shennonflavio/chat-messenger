@@ -83,10 +83,7 @@ function HomePage() {
        }
 
     }).then((res)=>{
-       if(res.status !== 200){
-        console.log(res.status)
-       }
-       return res.json()
+        res.json(res)
        }).then((data)=> setEmojiList(data))
 
   }
