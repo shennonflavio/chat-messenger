@@ -83,7 +83,7 @@ function HomePage() {
        }
 
     }).then((res)=>{
-        res.json(res)
+        res.json()
        }).then((data)=> setEmojiList(data))
 
   }
