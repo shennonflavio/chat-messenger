@@ -82,9 +82,9 @@ function HomePage() {
         'Accept': 'application/json'
        }
 
-    }).then((res)=>{
+    }).then((res)=>
         res.json()
-       }).then((data)=> setEmojiList(data))
+       ).then((data)=> setEmojiList(data))
 
   }
   return getEmoji;
