@@ -13,6 +13,7 @@ export const Content = styled.div`
   width: fit-content;
   max-width: 1450px;
   height: 95vh;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
