@@ -4,7 +4,9 @@ import React from 'react';
 import { ContactPhoto, Container, MessageUnread, Name } from './styles';
 
 function ContactCard({active}) {
-  return <Container active={active}>
+
+  return (
+  <Container active={active}>
     <ContactPhoto>
       <div className='photo' />
       <div  className='photo1' />
@@ -19,7 +21,8 @@ function ContactCard({active}) {
         <span>3</span>
       </div>
     </MessageUnread>
-  </Container>;
+  </Container>
+  )
 }
 
 export default ContactCard;

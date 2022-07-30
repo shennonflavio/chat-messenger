@@ -12,6 +12,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: fit-content;
   max-width: 1450px;
+  min-width: 1450px;
   height: 95vh;
   min-height: 750px;
   display: flex;
@@ -23,6 +24,7 @@ export const Content = styled.div`
   padding: 15px 15px 15px 40px;
   box-shadow: 0 0 50px 25px ${({ theme }) => theme.shadow};
   background-color: ${({ theme }) => theme.body};
+
 `;
 
 export const ContactContent = styled.div`
@@ -31,6 +33,8 @@ export const ContactContent = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-left: 12px;
+
 
   .imageLogo {
     display: flex;
@@ -196,6 +200,7 @@ export const TitleChat = styled.div`
   align-items: center;
   justify-content: flex-start;
   top: 0;
+  left: 0;
   position: absolute;
   padding: 12px;
   border-top-left-radius: 10px;
@@ -213,7 +218,8 @@ export const PainelChat = styled.div`
   height: calc(100% - 170px);
   position: absolute;
   top: 80px;
-  /* background: red; */
+  left: 0;
+  padding: 12px;
 
 `;
 
@@ -252,6 +258,7 @@ export const EmojiList = styled.div`
     height: 30px;
     border-radius: 5px;
     margin: 3px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,6 +269,7 @@ export const EmojiList = styled.div`
 export const InputMessage = styled.div`
   width: 100%;
   height: 100%;
+  max-width: 100%;
   display: flex;
   padding: 0 7px 0 20px;
   align-items: center;
@@ -270,11 +278,31 @@ export const InputMessage = styled.div`
   border: ${({ theme }) => `1px solid ${theme.border}`};
   border-radius: 30px;
   opacity: 1;
-
+  position: relative;
   span {
     color: ${({ theme }) => theme.textMajor};
     opacity: 1;
   }
+
+  #inputMessage{
+    border: none;
+    width: 80%;
+    height: 50px;
+    max-height: 55px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    :focus{
+      border: none;
+      list-style: none;
+      outline: none;
+    }
+  }
+
 
   .inputMessageOptions {
     width: fit-content;
@@ -283,10 +311,15 @@ export const InputMessage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 20%;
+
   }
   .emoji {
     cursor: pointer;
   }
+
 `;
 
 export const ChatDetails = styled.div`

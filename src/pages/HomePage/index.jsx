@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-
+// import InputEmoji from 'react-input-emoji';
 import axios from 'axios';
 import {
   addMember,
@@ -69,18 +69,39 @@ function HomePage() {
   const [openChatDetails, setOpenChatDetails] = useState(false);
   const [openEmojiList, setOpenEmojiList] = useState(false);
   const [emojiList, setEmojiList] = useState({});
+  const [hidePlaceholder, setHidePlaceholder] = useState(false)
+  const [hasEmoji, setHasEmoji] = useState("")
 
-  // function handlerEmojiList() {
-  //   setOpenEmojiList(!openEmojiList)
-  // }
 
 const handlerEmojiList = useCallback(()=> setOpenEmojiList(!openEmojiList),[openEmojiList])
 
 useEffect(()=>{
-
   axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
-},[handlerEmojiList])
+},[handlerEmojiList]);
 
+const insertEmojiOnInput =(e) =>{
+  const inputText = document.getElementById("inputMessage").innerText
+setHasEmoji(inputText + e.target.innerText)
+setOpenEmojiList(false)
+selectText()
+}
+
+
+const selectText =()=>{
+  let cursor = window.getSelection()
+  if (!cursor.focusNode || !cursor.focusNode.parentNode.id === "inputMessage") {
+    document.getElementById("inputMessage").focus()
+    cursor = window.getSelection()
+    let range = document.createRange()
+    range = cursor.getRangeAt(0)
+    range.deleteContents();
+    const frag = document.createDocumentFragment()
+    range.insertNode(frag)
+    frag.appendChild(hasEmoji)
+    range.setStartAfter(hasEmoji)
+  }
+
+}
 
 
   return (
@@ -148,12 +169,13 @@ useEffect(()=>{
 
                 height={openEmojiList ? '250px' : '0px'}>
                   {Object.entries(emojiList).map(([key, value]) =>
-                  <div className='emoji' key={key}>{value.symbol}</div>
+                  <div onClick={(e)=> insertEmojiOnInput(e)} id={value.title.replaceAll(" ", "-")} className='emoji' key={key} aria-hidden="true">{value.symbol}</div>
                    )}
                 </EmojiList>
-            <InputMessage>
-              <div>
-                <span>Enter your message here</span>
+                {/* <InputEmoji/> */}
+            <InputMessage >
+              <div aria-hidden="true" contentEditable="true" id='inputMessage'  onKeyDown={()=>setHidePlaceholder(true)} suppressContentEditableWarning="true">
+              {hidePlaceholder  ? "" || hasEmoji  : <span>Enter your message here</span>}
               </div>
               <div className="inputMessageOptions">
                 <div onClick={handlerEmojiList} className='emoji' aria-hidden="true">

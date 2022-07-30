@@ -9,6 +9,7 @@ export const Container = styled.div`
   border: ${({ active,theme}) => (active && theme ? `1px solid ${theme.border}` : 'transparent')};
   border-radius: 10px;
   margin-bottom: 3px;
+
 `;
 
 export const ContactPhoto = styled.div`
@@ -56,6 +57,7 @@ export const ContactPhoto = styled.div`
 
 export const Name = styled.div`
   width: 100%;
+  height: 71px;
   display: flex;
   gap: 1px;
   padding-left: 13px;
@@ -64,18 +66,22 @@ export const Name = styled.div`
   flex-direction: column;
 
   h3 {
+
     font-weight: normal;
     color: ${({theme})=> theme.textMajor};
     opacity: 1;
     font-size: 16;
+    white-space: nowrap;
   }
 
   h5 {
     font-weight: normal;
+    white-space: nowrap;
 
     color: ${({theme})=> theme.textMinor};
     opacity: 1;
     font-size: 12px;
+
   }
 `;
 

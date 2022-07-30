@@ -41,6 +41,7 @@ div{
  height: 25px;
  transform: rotate(45deg);
  top: 0px;
+ left: 0;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -57,8 +58,9 @@ div{
     border: ${({ rotate }) => (rotate ? '' : '1px solid #FFF')} ;
     border-radius:50%;
     top: 0px;
-    left:0px;
+    left: 0px;
     overflow: hidden;
+
 
     div{
       display:  ${({ rotate }) => (rotate ? '' : 'none')};
