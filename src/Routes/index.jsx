@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import HomePage from '../pages/HomePage';
 import GlobalStyle from '../styles/globalStyles';
 import {lightTheme,darkTheme} from '../styles/theme';
+import Login from '../pages/Login';
 // import { Container } from './styles';
 
 function Routes() {
@@ -14,7 +15,8 @@ function Routes() {
     <GlobalStyle/>
     <BrowserRouter>
       <PageRoutes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
       </PageRoutes>
     </BrowserRouter>
     </ThemeProvider>

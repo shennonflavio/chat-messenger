@@ -233,14 +233,14 @@ export const WrapperInputMessage = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-
-`;
+  `;
 
 export const EmojiList = styled.div`
   width: 100%;
   height: ${({ height }) => height};
   position: absolute;
   bottom: 65px;
+  left: 0;
   border-radius: 10px;
   background-color: ${({theme})=> theme.body};
   transition: 0.5s;
@@ -263,6 +263,34 @@ export const EmojiList = styled.div`
     align-items: center;
     justify-content: center;
     background: ${({theme})=> theme.backgroundCard};
+  }
+`;
+
+export const CategorieHeader = styled.div`
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: ${({theme})=> theme.textMajor};
+  border: 1px solid yellowgreen;
+`;
+export const EmojiContent = styled.div`
+  border: 1px solid yellow;
+`;
+
+export const WrapperEmojiCategory = styled.div`
+  width: fit-content;
+  height:fit-content;
+  display: flex;
+  flex-direction: row;
+
+  span{
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid red;
+  }
+  div{
+    border: 1px solid red;
   }
 `;
 
@@ -307,10 +335,11 @@ export const InputMessage = styled.div`
   .inputMessageOptions {
     width: fit-content;
     height: 100%;
+    padding: 0 8px;
     gap: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     position: absolute;
     right: 0;
     width: 20%;
@@ -526,6 +555,7 @@ export const MemberCard = styled.div`
   height: ${({ height }) => height};
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
   background: ${({ isActive, theme }) =>
     isActive && theme ? `${theme.backgroundCard}` : 'transparent'};
@@ -550,6 +580,7 @@ export const MemberCard = styled.div`
 export const MemberPhoto = styled.div`
   margin: ${({ margin }) => margin};
   width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -569,6 +600,7 @@ export const MemberPhoto = styled.div`
 
   .onlineDot {
     position: absolute;
+    top: 33px ;
     bottom: 10px;
     left: 27px;
     z-index: 2;

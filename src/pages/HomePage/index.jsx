@@ -63,6 +63,9 @@ import {
   WrapperFiles,
   SizeAndAction,
   EmojiList,
+  WrapperEmojiCategory,
+  CategorieHeader,
+  EmojiContent,
 } from './styles';
 
 function HomePage() {
@@ -76,7 +79,7 @@ function HomePage() {
 const handlerEmojiList = useCallback(()=> setOpenEmojiList(!openEmojiList),[openEmojiList])
 
 useEffect(()=>{
-  axios.get("/emojiList.json").then(res => res).then(res => setEmojiList(res.data))
+  axios.get("/emoji.json").then(res => res).then(res => setEmojiList(res.data))
 },[handlerEmojiList]);
 
 const insertEmojiOnInput =(e) =>{
@@ -102,6 +105,21 @@ const selectText =()=>{
   }
 
 }
+
+// const emoji = emojiList;
+
+// const filtro = []
+
+// emoji.forEach((item)=>{
+//   const duplicado = filtro.findIndex(redItem =>  item.category === redItem.category
+//   ) > -1;
+//   if (!duplicado) {
+//     filtro.push(item)
+
+//   }
+// })
+
+// console.log(filtro)
 
 
   return (
@@ -165,14 +183,17 @@ const selectText =()=>{
           <PainelChat>1</PainelChat>
           <WrapperInputMessage>
 
-                <EmojiList
+                <EmojiList height={openEmojiList ? '250px' : '0px'}>
+                  {/* <CategorieHeader>oi</CategorieHeader>
+                  <EmojiContent>oi</EmojiContent> */}
 
-                height={openEmojiList ? '250px' : '0px'}>
+                  {/* {Object.values( emojiList).forEach(item => item.findIndex(item2 => item.category === item2.category) > -1)} */}
                   {Object.entries(emojiList).map(([key, value]) =>
-                  <div onClick={(e)=> insertEmojiOnInput(e)} id={value.title.replaceAll(" ", "-")} className='emoji' key={key} aria-hidden="true">{value.symbol}</div>
+
+                  <div onClick={(e)=> insertEmojiOnInput(e)} id={value.description.replaceAll(" ", "-")} className='emoji' key={key} aria-hidden="true">{value.emoji}</div>
+
                    )}
                 </EmojiList>
-                {/* <InputEmoji/> */}
             <InputMessage >
               <div aria-hidden="true" contentEditable="true" id='inputMessage'  onKeyDown={()=>setHidePlaceholder(true)} suppressContentEditableWarning="true">
               {hidePlaceholder  ? "" || hasEmoji  : <span>Enter your message here</span>}

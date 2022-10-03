@@ -24,6 +24,7 @@ import film from './images/film.svg';
 import image from './images/image.svg';
 import arrowLeft from './images/arrow-left.svg';
 import favicon from './images/Symbol.svg';
+import ImageChat from './images/live-chat.svg';
 
 export{
   stars,
@@ -51,5 +52,6 @@ export{
   film,
   image,
   arrowLeft,
-  favicon
+  favicon,
+  ImageChat
 }
